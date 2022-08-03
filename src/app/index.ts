@@ -1,10 +1,8 @@
 import express from 'express'
-import cors from 'cors'
+import appConfig from '../app/config'
 
 const app = express()
 
-app.use(cors())
-
-app.use(express.json())
+appConfig(app)
 
 export default app
