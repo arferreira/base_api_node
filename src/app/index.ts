@@ -1,5 +1,5 @@
 import express from 'express'
-import appConfig from '../app/config'
+import appConfig from '@config/index'
 
 const app = express()
 
