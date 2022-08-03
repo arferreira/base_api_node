@@ -1,11 +1,11 @@
-import express  from "express"
+import express from "express"
 
 const router = express.Router()
 
 
 // Routes to users
 router.get('/', (req, res) => {
-  res.json({route: 'users routes'})
+  res.json({ route: 'Users routes' })
 })
 
 
