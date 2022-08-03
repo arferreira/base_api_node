@@ -1,30 +1,18 @@
-import mongoose from "mongoose";
+import { v4 as uuidV4 } from 'uuid';
+
+export class User {
+  public readonly id: string;
+
+  public name: string;
+  public email: string;
+  public password: string;
 
 
-interface IUser {
-  name: string,
-  email: string,
-  password: string,
+  constructor(propos: Omit<User, 'id'>, id?: string) {
+    Object.assign(this, propos);
+
+    if (!id) {
+      this.id = uuidV4();
+    }
+  }
 }
-
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  email: {
-    type: String,
-    required: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-});
-
-
-const User = mongoose.model('User', userSchema);
-
-
-export { User };
