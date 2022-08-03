@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon ./bin/www",
+    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify ./bin/server.ts",
     "test": "jest --forceExit --detectOpenHandles"
   },
   "dependencies": {
@@ -17,6 +17,9 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "@types/express": "^4.17.13",
+    "nodemon": "^2.0.19",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.4"
   }
 }
