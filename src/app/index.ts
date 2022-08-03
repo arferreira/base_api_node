@@ -1,8 +1,8 @@
-import express from 'express'
-import appConfig from '@config/index'
+import express from 'express';
+import appConfig from '@config/index';
 
-const app = express()
+const app = express();
 
-appConfig(app)
+appConfig(app);
 
-export default app
+export default app;
