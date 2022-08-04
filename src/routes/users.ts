@@ -10,9 +10,9 @@ router.post('/register', (req, res) => {
   return createUserController.handle(req, res);
 })
 
-router.post('/', (req, res) => {
-  return res.json({ message: 'ok' });
-})
+// router.post('/', (req, res) => {
+//   return res.json({ message: 'ok' });
+// })
 
 
 export default router
