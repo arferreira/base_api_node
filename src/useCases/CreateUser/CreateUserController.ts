@@ -11,7 +11,7 @@ export class CreateUserController {
 
   async handle(request: Request, response: Response): Promise<Response> {
     const { name, email, password } = request.body;
-
+    console.log(name, email, password)
     try {
       await this.createUserUseCase.execute({
         name,
