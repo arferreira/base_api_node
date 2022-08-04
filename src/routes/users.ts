@@ -10,6 +10,6 @@ router.post('/register', (req, res) => {
   return createUserController.handle(req, res);
 })
 
-// removed route
+
 
 export default router
