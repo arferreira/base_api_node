@@ -2,10 +2,10 @@ import dotenv from 'dotenv'
 dotenv.config()
 import app from './app'
 
-import usersRouter from './routes/users'
+import indexRouter from './routes/index'
 
 
-app.use('/users', usersRouter)
+app.use('/', indexRouter)
 
 
 
