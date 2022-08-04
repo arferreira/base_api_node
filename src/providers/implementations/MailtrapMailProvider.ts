@@ -1,5 +1,6 @@
 import { IMailProvider, IMessage } from "../IMailProvider";
 import nodemailer from "nodemailer";
+import dotenv from 'dotenv';
 
 export class MailtrapMailProvider implements IMailProvider {
   private transporter;
@@ -9,24 +10,19 @@ export class MailtrapMailProvider implements IMailProvider {
       host: "smtp.mailtrap.io",
       port: 2525,
       auth: {
-        user: "ac8a8afbf2657d",
-        pass: "9bf3d81d7133d0"
+        user: process.env.EMAIL_USERNAME,
+        pass: process.env.EMAIL_PASSWORD,
       }
     });
   }
 
   async sendMail(message: IMessage): Promise<void> {
-    await this.transporter.sendMail({
-      to: {
-        name: message.to.name,
-        email: message.to.email,
-      },
-      from: {
-        name: message.from.name,
-        email: message.from.email,
-      },
+    let mailOptions = {
+      from: message.from.email,
+      to: message.to.email,
       subject: message.subject,
-      body: message.body,
-    });
+      text: message.body,
+    }
+    await this.transporter.sendMail(mailOptions);
   }
 }

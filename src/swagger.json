@@ -9,7 +9,7 @@
     }
   },
   "paths": {
-    "/users": {
+    "/users/register": {
       "post": {
         "tags": [
           "User"
