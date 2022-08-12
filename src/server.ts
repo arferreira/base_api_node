@@ -1,11 +1,11 @@
-import dotenv from 'dotenv'
-dotenv.config()
-import app from './app'
+import dotenv from "dotenv";
+dotenv.config();
+import app from "./app";
 
-import indexRouter from './routes/index'
+import indexRouter from "./routes/index";
 
 
-app.use('/', indexRouter)
+app.use(indexRouter);
 
 
 
